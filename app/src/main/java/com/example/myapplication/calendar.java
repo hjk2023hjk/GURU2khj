@@ -20,11 +20,9 @@ public class calendar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //텍스트뷰 변수에 담기
-        dateText = findViewById(R.id.date_text_view);
 
         //버튼 변수에 담기
-        Button datePickerBtn = findViewById(R.id.date_picker_btn);
+        Button datePickerBtn = findViewById(R.id.datePickerBtn);
 
         //버튼 클릭 이벤트 설정
         datePickerBtn.setOnClickListener(new View.OnClickListener(){
@@ -36,7 +34,7 @@ public class calendar extends AppCompatActivity {
                 int pMonth = calendar.get(Calendar.MONTH);
                 int pDay = calendar.get(Calendar.DAY_OF_MONTH);
 
-                datePickerDialog = new DatePickerDialog(MainActivity.this,
+                datePickerDialog = new DatePickerDialog(calendar.this,
                         new DatePickerDialog.OnDateSetListener(){
                     @Override
                     public void onDateSet(DatePicker datePicker, int year, int month, int day)
